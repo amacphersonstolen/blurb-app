@@ -8,7 +8,7 @@ module.exports = {
   },
   port: process.env.PORT || 8443,
   db: {
-    uri: "mongodb://acms72898:284174ams@ds011775.mlab.com:11775/heroku_djc4tc5k",
+    uri: "mongodb://acms72898:284174ams@ds127429.mlab.com:27429/blurb-app",
     options: {
       user: '',
       pass: ''
