@@ -1,0 +1,29 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.blurb._id ? 'Edit Blurb' : 'New Blurb'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.blurbForm" class="form-horizontal" ng-submit="vm.save(vm.form.blurbForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.blurb.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.blurbForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Blurb name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="description" >Description</label>
+          <textarea name="content" ng-model="vm.blurb.description" class="form-control" cols="30" rows="5" placeholder="Blurb"></textarea>
+        </div>
+       
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.blurb._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

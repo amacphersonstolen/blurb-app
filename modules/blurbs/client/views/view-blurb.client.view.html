@@ -1,0 +1,31 @@
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.blurb.name"></h1>
+    <h4 ng-bind="vm.blurb.description"></h4>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.blurb.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="boards.addblurb({ blurbId: vm.blurb._id })">
+      <i class="glyphicon glyphicon-plus"></i>
+    </a>
+    <a class="btn btn-primary"
+       ui-sref="blurbs.edit({ blurbId: vm.blurb._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.blurb.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.blurb.user"
+            ng-bind="vm.blurb.user.displayName"></span>
+      <span ng-if="!vm.blurb.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.blurb.content"></p>
+</section>

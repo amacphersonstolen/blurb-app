@@ -1,0 +1,23 @@
+<section>
+  <div class="page-header">
+    <h1>Blurbs</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="blurb in vm.blurbs"
+       ui-sref="blurbs.view({ blurbId: blurb._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="blurb.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="blurb.user" ng-bind="blurb.user.displayName"></span>
+        <span ng-if="!blurb.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="blurb.name"></h4>
+      <h2 class="list-group-item-heading" ng-bind="blurb.text"></h2>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.blurbs.$resolved && !vm.blurbs.length">
+    No Blurbs yet, why don't you <a ui-sref="blurbs.create">create one</a>?
+  </div>
+</section>

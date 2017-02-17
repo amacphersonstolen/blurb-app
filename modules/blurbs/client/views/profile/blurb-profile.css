@@ -1,0 +1,81 @@
+/*borrowed code from javabella on codepen
+*/
+
+*,
+*::after,
+*::before {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+}
+
+body {
+		font-size: 20px;
+		line-height: 1.4;
+		color: rgb(144, 162, 148);
+		background: #1d1f20;
+}
+
+.preview {
+		display: block;
+		width: 200px;
+		height: 200px;
+		margin: 20px auto;
+		border: 2px solid rgb(33, 122, 105);
+		border-radius: 50%;
+		overflow: hidden;
+}
+
+.file-upload-wrapper {
+		position: relative;
+		z-index: 5;
+		display: block;
+		width: 250px;
+		height: 30px;
+		margin: 5px auto;
+		border-right: 2px dotted rgb(33, 122, 105);
+		border-bottom: 2px dotted rgb(33, 122, 105);
+		border-left: 2px dotted rgb(33, 122, 105);
+}
+
+.file-upload-native,
+.file-upload-text {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+		cursor: pointer;
+}
+
+.file-upload-native:focus,
+.file-upload-text:focus {
+		outline: none;
+}
+
+.file-upload-text {
+		z-index: 10;
+		padding: 5px 15px 8px;
+		overflow: hidden;
+		font-size: 14px;
+		line-height: 1.4;
+		cursor: pointer;
+		text-align: center;
+		letter-spacing: 1px;
+		text-overflow: ellipsis;
+		color: rgb(144, 162, 148);
+		border: 0;
+		background-color: transparent;
+}
+
+.file-upload-native {
+		z-index: 15;
+		opacity: 0;
+}
+
+/*end of borrowed code*/
