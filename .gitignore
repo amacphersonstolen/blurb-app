@@ -18,6 +18,7 @@ coverage/
 
 # MEAN.js app and assets
 # ======================
+
 uploads
 modules/users/client/img/profile/uploads
 config/env/local.js
@@ -38,7 +39,7 @@ _site/
 *.bak
 *.swp
 logs/
-
+build/
 
 # Sublime editor
 # ==============
